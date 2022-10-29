@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS addresses (
     city_name VARCHAR(50) NOT NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    CONSTRAINT fk_prefecture_id
+    CONSTRAINT fk_addresses_prefecture_id
     FOREIGN KEY (prefecture_id)
         REFERENCES prefectures(id)
         ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS map_registration (
     FOREIGN KEY (user_id)
         REFERENCES users(id)
         ON DELETE RESTRICT ON UPDATE RESTRICT,
-    CONSTRAINT fk_prefecture_id
+    CONSTRAINT fk_map_registration_prefecture_id
     FOREIGN KEY (prefecture_id)
         REFERENCES prefectures(id)
         ON DELETE RESTRICT ON UPDATE RESTRICT
