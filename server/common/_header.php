@@ -5,6 +5,7 @@
         </a>
         <i class="fa-solid fa-plane"></i>
     </h1>
+<<<<<<< HEAD
     <div class="header_right">
         <li class="header_nav_item"><a href="/server/information/search.php">観光地検索</a></li>
         <li class="header_nav_item"><a href="/server/map/map_register.php">旅行歴記録</a></li>
@@ -15,4 +16,6 @@
     <div class="header_right_side">
         <li class="header_nav_item">ログイン中<br>[user]さん</li>
     </div>
+=======
+>>>>>>> feature/issue/#2
 </header>

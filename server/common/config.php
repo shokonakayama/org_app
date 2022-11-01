@@ -3,3 +3,7 @@
 define('DSN', 'mysql:host=db;dbname=sightseeing_db;charset=utf8');
 define('USER', 'admin');
 define('PASSWORD', 'password');
+
+define('MSG_EMAIL_REQUIRED', 'メールアドレスが未入力です');
+define('MSG_NAME_REQUIRED', 'ユーザー名が未入力です');
+define('MSG_PASSWORD_REQUIRED', 'パスワードが未入力です');
