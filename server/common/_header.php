@@ -1,9 +1,8 @@
 <header class="header wrapper">
     <h1>
         <a class="header_left" href="/server/users/index.php">
-            旅ログ
+            旅ログ <i class="fa-solid fa-plane"></i>
         </a>
-        <i class="fa-solid fa-plane"></i>
     </h1>
     <div class="header_right">
         <li class="header_nav_item"><a href="/server/information/search.php">観光地検索</a></li>
@@ -15,5 +14,4 @@
     <div class="header_right_side">
         <li class="header_nav_item">ログイン中<br>[user]さん</li>
     </div>
-
 </header>
