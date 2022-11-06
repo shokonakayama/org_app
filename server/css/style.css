@@ -26,6 +26,12 @@ a:hover {
     list-style: none;
 }
 
+/* backgroundimage */
+#main_content {
+    background-image: url(/../images/img00.jpg);
+    background-size: cover;
+}
+
 /* header */
 header {
     background-color: rgb(234, 250, 252);
@@ -51,15 +57,6 @@ header {
     padding-right: 2%;
 }
 
-/* backgroundimage */
-.rondombg {
-    width: 240px;
-    height: 140px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 /* signup.php */
 .signup_content {
     border-radius: 10px;
@@ -74,7 +71,7 @@ input[type="password"],
 input[type="text"] {
     display: block;
     width: 100%;
-    background-color: lightgray;
+    background-color: darkgray;
     border-radius: 10px;
     margin-bottom: 15px;
     padding: 7px;
@@ -94,7 +91,7 @@ input[type="text"]::placeholder {
     text-align: center;
     padding: 15px 0;
     width: 50%;
-    background: darkgray;
+    background: gray;
     color: #ffffff;
     border-radius: 10px;
     text-decoration: none;
@@ -104,10 +101,11 @@ input[type="text"]::placeholder {
 }
 .login_page_button:hover {
     opacity: 0.7;
-    background-color: #38c667;
+    background-color: #ffffff;
     transition-duration: 0.7s;
     box-shadow: 0 15px 30px -5px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .1);
     transform: translateY(5px);
+    color: gray;
 }
 
 /* footer */
