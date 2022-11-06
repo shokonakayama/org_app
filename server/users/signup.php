@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 <?php include_once __DIR__ . '/../common/_head.html' ?>
+
 <body>
     <header class="header wrapper">
         <h1>
             <div class="header_left">
-                旅ログ
+                旅ログ <i class="fa-solid fa-plane"></i>
             </div>
-            <i class="fa-solid fa-plane"></i>
         </h1>
     </header>
     <main class="main_content content_center wrapper">
@@ -26,6 +26,5 @@
         <?php include_once __DIR__ . '/../common/_footer.html' ?>
     </footer>
 </body>
+
 </html>
-
-
