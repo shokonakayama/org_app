@@ -25,6 +25,10 @@ a:hover {
     padding: 0 4%;
     list-style: none;
 }
+#main_content {
+    background-image: url(/../images/img00.jpg);
+    background-size: cover;
+}
 
 /* header */
 header {
