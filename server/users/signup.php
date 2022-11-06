@@ -10,8 +10,7 @@
             </div>
         </h1>
     </header>
-    <main class="main_content content_center wrapper">
-        <?php include_once __DIR__ . '/../common/_bgi.html' ?>
+    <main id="main_content" class="main_content content_center wrapper">
         <div class="signup_content">
             <form action="" class="signup_form" method="post">
                 <input type="email" name="email" id="email" placeholder="メールアドレス（設定してください）">
@@ -26,6 +25,7 @@
     <footer>
         <?php include_once __DIR__ . '/../common/_footer.html' ?>
     </footer>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>
