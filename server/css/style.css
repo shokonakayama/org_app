@@ -84,12 +84,13 @@ input[type="text"]::placeholder {
 }
 .button_area {
     margin-top: 30px;
-    display: flex;
+    text-align: center;
     justify-content: center;
 }
 .login_page_button {
+    display: inline-block;
     text-align: center;
-    padding: 15px 0;
+    padding: 15px;
     width: 50%;
     background: gray;
     color: #ffffff;
@@ -97,15 +98,74 @@ input[type="text"]::placeholder {
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-    padding: 10px;
 }
 .login_page_button:hover {
-    opacity: 0.7;
+    opacity: 0.9;
     background-color: #ffffff;
     transition-duration: 0.7s;
     box-shadow: 0 15px 30px -5px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .1);
     transform: translateY(5px);
     color: gray;
+}
+
+/* login.php */
+.login_content {
+    border-radius: 10px;
+    width: 400px;
+    margin: 0 auto;
+    padding: 50px;
+    padding-top: 15%;
+    font-size: 12px;
+}
+input[type="email"],
+input[type="passoword"]{
+    display: block;
+    width: 100%;
+    background-color:darkgray;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 7px;
+    text-align: center;
+}
+input[type="email"],
+input[type="password"]{
+    color: #ffffff;
+}
+.index_page_button {
+    display: inline-block;
+    text-align: center;
+    padding: 15px;
+    width: 50%;
+    background: gray;
+    color: #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 10px;
+}
+.index_page_button:hover {
+    opacity: 0.9;
+    background-color: #ffffff;
+    transition-duration: 0.7s;
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .1);
+    transform: translateY(3px);
+    color: gray;
+}
+.signup_page_button {
+    text-align: center;
+    padding: 5px;
+    width: 50%;
+    background: #ffffff;
+    color: #ecaa63;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 10px;
+}
+.signup_page_button:hover {
+    opacity: 0.9;
+    background-color: orange;
+    color: #ffffff;
 }
 
 /* footer */
