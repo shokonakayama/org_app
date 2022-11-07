@@ -1,4 +1,4 @@
-<?php 
+<?php
 // 関数ファイルを読み込む
 require_once __DIR__ . '/../common/functions.php';
 
@@ -16,18 +16,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="ja">
 <?php include_once __DIR__ . '/../common/_head.html' ?>
+
 <body>
     <header class="header wrapper">
         <h1>
             <div class="header_left">
-                旅ログ
+                旅ログ <i class="fa-solid fa-plane"></i>
             </div>
-            <i class="fa-solid fa-plane"></i>
         </h1>
     </header>
-    <main class="main_content content_center wrapper"></main>
+    <main id="main_content" class="main_content content_center wrapper">
+        <div class="login_content">
+            <form action="" class="login_form" method="post">
+                <input type="email" name="email" id="email" placeholder="メールアドレス">
+                <input type="password" name="password" id="password" placeholder="パスワード">
+                <div class="button_area">
+                    <a href="index.php" class="index_page_button">ログイン✈︎</a>
+                    <br>
+                    <p><a href="signup.php" class="signup_page_button">新規登録はこちら✈︎</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
     <footer>
         <?php include_once __DIR__ . '/../common/_footer.html' ?>
     </footer>
+    <script src="../js/app.js"></script>
 </body>
+
 </html>
