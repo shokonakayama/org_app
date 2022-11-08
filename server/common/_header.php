@@ -12,6 +12,8 @@
         <li class="header_nav_item"><a href="/server/users/login.php">ログアウト</a></li>
     </div>
     <div class="header_right_side">
-        <li class="header_nav_item">ログイン中<br>[user]さん</li>
+        <li class="header_nav_item">ログイン中<br>
+        <?= $username['user'] ?>さん
+        </li>
     </div>
 </header>

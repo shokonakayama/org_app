@@ -23,7 +23,7 @@ function h($str)
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
 // 新規ユーザー登録 バリデーション関数
-function signup_validate($email, $name, $password)
+function signup_validate($email, $nickname, $password)
 {
     $errors = [];
 
@@ -31,8 +31,8 @@ function signup_validate($email, $name, $password)
         $errors[] = MSG_EMAIL_REQUIRED;
     }
 
-    if (empty($name)) {
-        $errors[] = MSG_NAME_REQUIRED;
+    if (empty($nickname)) {
+        $errors[] = MSG_NICKNAME_REQUIRED;
     }
 
     if (empty($password)) {

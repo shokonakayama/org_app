@@ -1,3 +1,21 @@
+<?php 
+require_once __DIR__ . '/../common/functions.php';
+
+$email = '';
+$password = '';
+$nickname = '';
+
+$errors = [];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = filter_input(INPUT_POST, 'email');
+    $password = filter_input(INPUT_POST, 'password');
+    $nickname = filter_input(INPUT_POST, 'nickname');
+
+    $errors = login_validate($email, $password, $nickname);
+}
+ ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <?php include_once __DIR__ . '/../common/_head.html' ?>

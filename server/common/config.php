@@ -5,5 +5,5 @@ define('USER', 'admin');
 define('PASSWORD', 'password');
 
 define('MSG_EMAIL_REQUIRED', 'メールアドレスが未入力です');
-define('MSG_NAME_REQUIRED', 'ユーザー名が未入力です');
 define('MSG_PASSWORD_REQUIRED', 'パスワードが未入力です');
+define('MSG_NICKNAME_REQUIRED', 'ニックネームが未入力です');
