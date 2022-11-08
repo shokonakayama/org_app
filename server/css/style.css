@@ -181,3 +181,15 @@ footer {
     font-size: 1rem;
     padding: 20px 0;
 }
+
+/* errors */
+.errors {
+    margin: 10px 0;
+}
+.errors li {
+    margin-top: 5px;
+    color: darkgrey;
+    text-align: center;
+    list-style: none;
+    background-color: #ffffff;
+}

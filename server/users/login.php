@@ -2,8 +2,10 @@
 // 関数ファイルを読み込む
 require_once __DIR__ . '/../common/functions.php';
 
+//変数の初期化
 $email = '';
 $password = '';
+
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
