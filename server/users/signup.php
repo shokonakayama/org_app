@@ -1,3 +1,31 @@
+<?php
+//関数ファイルを読み込む
+require_once __DIR__ . '/../common/functions.php';
+
+//変数の初期化
+$email = '';
+$nickname = '';
+$password = '';
+
+$errors = [];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = filter_input(INPUT_POST, 'email');
+    $nickname = filter_input(INPUT_POST, 'nickname');
+    $password = filter_input(INPUT_POST, 'password');
+
+    $errors = signup_validate($email, $nickname, $password);
+
+    if (
+        empty($errors) &&
+        insert_user($email, $nickname, $password)
+    ) {
+        header('Location: login.php');
+        exit;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <?php include_once __DIR__ . '/../common/_head.html' ?>
@@ -12,10 +40,13 @@
     </header>
     <main id="main_content" class="main_content content_center wrapper">
         <div class="signup_content">
+
+            <?php include_once __DIR__ . '/../common/_errors.php' ?>
+
             <form action="" class="signup_form" method="post">
-                <input type="email" name="email" id="email" placeholder="メールアドレス（設定してください）">
-                <input type="password" name="password" id="password" placeholder="パスワード（設定してください）">
-                <input type="text" name="name" id="name" placeholder="ニックネーム（設定してください）">
+                <input type="email" name="email" id="email" placeholder="メールアドレス（設定してください)" value="<?= h($email) ?>">
+                <input type="password" name="password" id="password" placeholder="パスワード（設定してください)" value="<?= h($password) ?>">
+                <input type="text" name="name" id="name" placeholder="ニックネーム（設定してください)">
                 <div class="button_area">
                     <a href="login.php" class="login_page_button">新規登録する✈︎</a>
                 </div>
