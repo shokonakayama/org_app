@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="button_area">
                     <a href="index.php" class="index_page_button">ログイン✈︎</a>
                     <br>
-                    <p><a href="signup.php" class="signup_page_button">新規登録はこちら✈︎</a></p>
+                    <p><a href="signup.php" class="login_content_signup_page_button">新規登録はこちら✈︎</a></p>
                 </div>
             </form>
         </div>

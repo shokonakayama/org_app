@@ -152,7 +152,7 @@ input[type="password"]{
     transform: translateY(3px);
     color: gray;
 }
-.signup_page_button {
+.login_content_signup_page_button {
     text-align: center;
     padding: 5px;
     width: 50%;
@@ -162,7 +162,7 @@ input[type="password"]{
     font-weight: bold;
     font-size: 10px;
 }
-.signup_page_button:hover {
+.login_content_signup_page_button:hover {
     opacity: 0.9;
     background-color: orange;
     color: #ffffff;

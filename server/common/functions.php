@@ -23,7 +23,7 @@ function h($str)
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
 // 新規ユーザー登録 バリデーション関数
-function signup_validate($email, $nickname, $password)
+function signup_validate($email, $password, $nickname)
 {
     $errors = [];
 
@@ -31,34 +31,34 @@ function signup_validate($email, $nickname, $password)
         $errors[] = MSG_EMAIL_REQUIRED;
     }
 
-    if (empty($nickname)) {
-        $errors[] = MSG_NICKNAME_REQUIRED;
-    }
-
     if (empty($password)) {
         $errors[] = MSG_PASSWORD_REQUIRED;
+    }
+
+    if (empty($nickname)) {
+        $errors[] = MSG_NICKNAME_REQUIRED;
     }
 
     return $errors;
 }
 
-function insert_user($email, $nickname, $password) {
+function insert_user($email, $password ,$nickname) {
     try {
         $dbh = connect_db();
 
         $sql = <<<EOM
         INSERT INTO
             users
-            (email, nickname, password)
+            (email, password, nickname)
         VALUES
-            (:email, :nickname, :password);
+            (:email, :password,  :nickname);
         EOM;
 
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-        $stmt->bindValue(':nickname', $nickname, PDO::PARAM_STR);
         $pw_hash = password_hash($password, PASSWORD_DEFAULT);
         $stmt->bindValue(':$password', $pw_hash, PDO::PARAM_STR);
+        $stmt->bindValue(':nickname', $nickname, PDO::PARAM_STR);
 
         $stmt->execute();
         return true;
