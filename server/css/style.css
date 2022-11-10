@@ -134,17 +134,17 @@ input[type="text"]::placeholder {
     font-size: 12px;
 }
 input[type="email"],
-input[type="passoword"]{
+input[type="passoword"] {
     display: block;
     width: 100%;
-    background-color:darkgray;
+    background-color: darkgray;
     border-radius: 10px;
     margin-bottom: 15px;
     padding: 7px;
     text-align: center;
 }
 input[type="email"],
-input[type="password"]{
+input[type="password"] {
     color: #ffffff;
 }
 .index_page_button {
