@@ -97,10 +97,10 @@ input[type="text"]::placeholder {
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
+    padding: 10px;
 }
 .signup_button:hover {
     opacity: 0.7;
-
     background-color: #ffffff;
     transition-duration: 0.7s;
     box-shadow: 0 15px 30px -5px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .1);
@@ -117,10 +117,11 @@ input[type="text"]::placeholder {
     font-size: 8px;
     font-weight: bold;
 }
-.signup_form_login_page_button {
+.signup_form_login_page_button:hover {
     opacity: 0.8;
-    background-color: #ffffff;
-    color: #ecaa63;
+    background-color: #ecaa63;
+    color: #ffffff;
+    transition-duration: 0.8s;
 }
 
 /* login.php */
@@ -133,17 +134,17 @@ input[type="text"]::placeholder {
     font-size: 12px;
 }
 input[type="email"],
-input[type="passoword"]{
+input[type="passoword"] {
     display: block;
     width: 100%;
-    background-color:darkgray;
+    background-color: darkgray;
     border-radius: 10px;
     margin-bottom: 15px;
     padding: 7px;
     text-align: center;
 }
 input[type="email"],
-input[type="password"]{
+input[type="password"] {
     color: #ffffff;
 }
 .index_page_button {

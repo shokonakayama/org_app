@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="button_area">
                     <p><input type="submit" value="新規登録する✈︎" class="signup_button"></p>
                     <br>
-                   <p><a href="login.php" class="signup_form_login_page_button">ログインはこちら✈︎</a></p>
+                    <p><a href="login.php" class="signup_form_login_page_button">ログインはこちら✈︎</a></p>
                 </div>
             </form>
         </div>
