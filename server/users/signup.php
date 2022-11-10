@@ -48,7 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="password" name="password" id="password" placeholder="パスワード（設定してください)" value="<?= h($password) ?>">
                 <input type="text" name="name" id="name" placeholder="ニックネーム（設定してください)">
                 <div class="button_area">
-                    <input type="submit" value="新規登録する✈︎" class="signup_button">
+                    <p><input type="submit" value="新規登録する✈︎" class="signup_button"></p>
+                    <br>
+                   <p><a href="login.php" class="signup_form_login_page_button">ログインはこちら✈︎</a></p>
                 </div>
             </form>
         </div>
