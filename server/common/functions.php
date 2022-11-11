@@ -58,7 +58,7 @@ function insert_user($email, $nickname, $password) {
         $stmt->bindValue(':email', $email, PDO::PARAM_STR);
         $stmt->bindValue(':nickname', $nickname, PDO::PARAM_STR);
         $pw_hash = password_hash($password, PASSWORD_DEFAULT);
-        $stmt->bindValue(':$password', $pw_hash, PDO::PARAM_STR);
+        $stmt->bindValue(':password', $pw_hash, PDO::PARAM_STR);
 
         $stmt->execute();
         return true;
