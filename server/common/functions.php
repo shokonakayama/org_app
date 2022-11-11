@@ -23,7 +23,7 @@ function h($str)
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
 // 新規ユーザー登録 バリデーション関数
-function signup_validate($email, $nickname, $password)
+function signup_validate($email, $password, $nickname)
 {
     $errors = [];
 
@@ -31,34 +31,34 @@ function signup_validate($email, $nickname, $password)
         $errors[] = MSG_EMAIL_REQUIRED;
     }
 
-    if (empty($nickname)) {
-        $errors[] = MSG_NICKNAME_REQUIRED;
-    }
-
     if (empty($password)) {
         $errors[] = MSG_PASSWORD_REQUIRED;
+    }
+
+    if (empty($nickname)) {
+        $errors[] = MSG_NICKNAME_REQUIRED;
     }
 
     return $errors;
 }
 
-function insert_user($email, $nickname, $password) {
+function insert_user($email, $password, $nickname) {
     try {
         $dbh = connect_db();
 
         $sql = <<<EOM
         INSERT INTO
             users
-            (email, nickname, password)
+            (email, password, nickname)
         VALUES
-            (:email, :nickname, :password);
+            (:email, :password, :nickname);
         EOM;
 
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-        $stmt->bindValue(':nickname', $nickname, PDO::PARAM_STR);
         $pw_hash = password_hash($password, PASSWORD_DEFAULT);
         $stmt->bindValue(':password', $pw_hash, PDO::PARAM_STR);
+        $stmt->bindValue(':nickname', $nickname, PDO::PARAM_STR);
 
         $stmt->execute();
         return true;
@@ -77,8 +77,34 @@ function login_validate($email, $password) {
     }
 
     if (empty($password)) {
-        $errors = MSG_PASSWORD_REQUIRED;
+        $errors[] = MSG_PASSWORD_REQUIRED;
     }
 
     return $errors;
+}
+
+function find_user_by_email($email){
+    $dbh = connect_db();
+
+    $sql = <<<EOM
+    SELECT
+        *
+    FROM
+        users
+    WHERE
+        email = :email;
+    EOM;
+
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function user_login($user){
+    $_SESSION['current_user']['id'] = $user['id'];
+    $_SESSION['current_user']['nickname'] =$user['nickname'];
+    header('Location: ../users/index.php');
+    exit;
 }
