@@ -14,7 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = login_validate($email, $password, $nickname);
 }
- ?>
+    if (
+        empty($errors) &&
+        insert_user($email, $password, $nickname)
+    ) {
+        header('Location: login.php');
+        exit;
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -30,12 +37,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </header>
     <main id="main_content" class="main_content content_center wrapper">
         <div class="signup_content">
+
+            <?php include_once __DIR__ . '/../common/_errors.php' ?>
+
             <form action="" class="signup_form" method="post">
-                <input type="email" name="email" id="email" placeholder="メールアドレス（設定してください）">
-                <input type="password" name="password" id="password" placeholder="パスワード（設定してください）">
-                <input type="text" name="name" id="name" placeholder="ニックネーム（設定してください）">
+                <input type="email" name="email" id="email" placeholder="メールアドレス（設定してください)" value="<?= h($email) ?>">
+                <input type="password" name="password" id="password" placeholder="パスワード（設定してください)" value="<?= h($password) ?>">
+                <input type="text" name="name" id="name" placeholder="ニックネーム（設定してください)">
                 <div class="button_area">
-                    <a href="login.php" class="login_page_button">新規登録する✈︎</a>
+                    <p><input type="submit" value="新規登録する✈︎" class="signup_button"></p>
+                    <br>
+                    <p><a href="login.php" class="signup_form_login_page_button">ログインはこちら✈︎</a></p>
                 </div>
             </form>
         </div>

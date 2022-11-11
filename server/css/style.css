@@ -84,13 +84,12 @@ input[type="text"]::placeholder {
 }
 .button_area {
     margin-top: 30px;
+    display: block;
     text-align: center;
-    justify-content: center;
+    margin: auto;
 }
-.login_page_button {
-    display: inline-block;
+.signup_button {
     text-align: center;
-    padding: 15px;
     width: 50%;
     background: gray;
     color: #ffffff;
@@ -98,14 +97,31 @@ input[type="text"]::placeholder {
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
+    padding: 10px;
 }
-.login_page_button:hover {
-    opacity: 0.9;
+.signup_button:hover {
+    opacity: 0.7;
     background-color: #ffffff;
     transition-duration: 0.7s;
     box-shadow: 0 15px 30px -5px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .1);
     transform: translateY(5px);
-    color: gray;
+    color: darkgray;
+}
+.signup_form_login_page_button {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 5px;
+    width: 40%;
+    color: #ecaa63;
+    border-radius: 5px;
+    font-size: 8px;
+    font-weight: bold;
+}
+.signup_form_login_page_button:hover {
+    opacity: 0.8;
+    background-color: #ecaa63;
+    color: #ffffff;
+    transition-duration: 0.8s;
 }
 
 /* login.php */
@@ -118,17 +134,17 @@ input[type="text"]::placeholder {
     font-size: 12px;
 }
 input[type="email"],
-input[type="passoword"]{
+input[type="passoword"] {
     display: block;
     width: 100%;
-    background-color:darkgray;
+    background-color: darkgray;
     border-radius: 10px;
     margin-bottom: 15px;
     padding: 7px;
     text-align: center;
 }
 input[type="email"],
-input[type="password"]{
+input[type="password"] {
     color: #ffffff;
 }
 .index_page_button {
@@ -152,7 +168,7 @@ input[type="password"]{
     transform: translateY(3px);
     color: gray;
 }
-.signup_page_button {
+.login_content_signup_page_button {
     text-align: center;
     padding: 5px;
     width: 50%;
@@ -162,7 +178,7 @@ input[type="password"]{
     font-weight: bold;
     font-size: 10px;
 }
-.signup_page_button:hover {
+.login_content_signup_page_button:hover {
     opacity: 0.9;
     background-color: orange;
     color: #ffffff;
@@ -181,3 +197,18 @@ footer {
     font-size: 1rem;
     padding: 20px 0;
 }
+
+/* errors */
+.errors {
+    margin: 10px 0;
+}
+.errors li {
+    color: darkgrey;
+    text-align: center;
+    list-style: none;
+    background-color: #ffffff;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
