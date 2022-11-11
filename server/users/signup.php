@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = filter_input(INPUT_POST, 'password');
 
     $errors = signup_validate($email, $nickname, $password);
-
     if (
         empty($errors) &&
         insert_user($email, $nickname, $password)
@@ -46,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form action="" class="signup_form" method="post">
                 <input type="email" name="email" id="email" placeholder="メールアドレス（設定してください)" value="<?= h($email) ?>">
                 <input type="password" name="password" id="password" placeholder="パスワード（設定してください)" value="<?= h($password) ?>">
-                <input type="text" name="name" id="name" placeholder="ニックネーム（設定してください)">
+                <input type="text" name="nickname" id="name" placeholder="ニックネーム（設定してください)">
                 <div class="button_area">
                     <p><input type="submit" value="新規登録する✈︎" class="signup_button"></p>
                     <br>
