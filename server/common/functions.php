@@ -42,7 +42,7 @@ function signup_validate($email, $password, $nickname)
     return $errors;
 }
 
-function insert_user($email, $password ,$nickname) {
+function insert_user($email, $password, $nickname) {
     try {
         $dbh = connect_db();
 
@@ -51,13 +51,13 @@ function insert_user($email, $password ,$nickname) {
             users
             (email, password, nickname)
         VALUES
-            (:email, :password,  :nickname);
+            (:email, :password, :nickname);
         EOM;
 
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':email', $email, PDO::PARAM_STR);
         $pw_hash = password_hash($password, PASSWORD_DEFAULT);
-        $stmt->bindValue(':$password', $pw_hash, PDO::PARAM_STR);
+        $stmt->bindValue(':password', $pw_hash, PDO::PARAM_STR);
         $stmt->bindValue(':nickname', $nickname, PDO::PARAM_STR);
 
         $stmt->execute();
@@ -77,8 +77,34 @@ function login_validate($email, $password) {
     }
 
     if (empty($password)) {
-        $errors = MSG_PASSWORD_REQUIRED;
+        $errors[] = MSG_PASSWORD_REQUIRED;
     }
 
     return $errors;
+}
+
+function find_user_by_email($email){
+    $dbh = connect_db();
+
+    $sql = <<<EOM
+    SELECT
+        *
+    FROM
+        users
+    WHERE
+        email = :email;
+    EOM;
+
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function user_login($user){
+    $_SESSION['current_user']['id'] = $user['id'];
+    $_SESSION['current_user']['nickname'] =$user['nickname'];
+    header('Location: ../users/index.php');
+    exit;
 }
