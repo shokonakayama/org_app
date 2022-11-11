@@ -13,7 +13,7 @@
     </div>
     <div class="header_right_side">
         <li class="header_nav_item">ログイン中<br>
-        <?= $username['user'] ?>さん
+        <?= $user['nickname'] ?>さん
         </li>
     </div>
 </header>
