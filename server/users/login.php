@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <form action="" class="login_form" method="post">
                 <input type="email" name="email" id="email" placeholder="メールアドレス" value="<?= h($email) ?>">
-                <input type="password" name="password" id="password" placeholder="パスワード" value="<?= h($password) ?>">
+                <input type="password" name="password" id="password" placeholder="パスワード">
                 <div class="button_area">
                     <input type="submit" value="ログイン" class="index_page_button">
                     <br>

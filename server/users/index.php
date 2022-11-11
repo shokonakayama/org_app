@@ -19,4 +19,5 @@ if (isset($_SESSION['current_user'])) {
     <main class="main_content content_center wrapper"></main>
     <?php include_once __DIR__ . '/../common/_footer.html' ?>
 </body>
+
 </html>
