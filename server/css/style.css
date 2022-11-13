@@ -184,6 +184,36 @@ input[type="password"] {
     color: #ffffff;
 }
 
+/* index.php */
+.index_content {
+    text-align: center;
+    padding: 150px;
+}
+.index_content a {
+    list-style: none;
+    font-size: 25px;
+    font-weight: bold;
+    width: 50%;
+    background-color: silver;
+    border-radius: 10px;
+    color: #ffffff;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-flow: column;
+    margin: 20px auto;
+    vertical-align: middle;
+    align-items: center;
+}
+.index_content a:hover {
+    opacity: 0.9;
+    background-color: #fff;
+    transition-duration: 0.7s;
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .1);
+    transform: translateY(5px);
+    color: darkgray;
+}
+
 /* footer */
 footer {
     height: 70px;
@@ -211,4 +241,3 @@ footer {
     margin: 0 auto;
     margin-top: 5px;
 }
-

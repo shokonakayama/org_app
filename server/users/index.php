@@ -16,8 +16,17 @@ if (isset($_SESSION['current_user'])) {
 
 <body>
     <?php include_once __DIR__ . '/../common/_header.php' ?>
-    <main class="main_content content_center wrapper"></main>
-    <?php include_once __DIR__ . '/../common/_footer.html' ?>
+    <main id="main_content" class="main_content content_center wrapper">
+        <div class="index_content">
+            <a href="search.php" class="index_content_search_page_button">観光地検索✈︎</a>
+            <a href="map_register.php" class="index_content_register_page_button">旅行歴記録</a>
+            <a href="experience_upload.php" class="index_content_experience_upload.php">体験談投稿</a>
+        </div>
+    </main>
+    <footer>
+        <?php include_once __DIR__ . '/../common/_footer.html' ?>
+    </footer>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>
