@@ -23,9 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = login_validate($email, $password);
 
-    if (empty($errors)){
+    if (empty($errors)) {
         $user = find_user_by_email($email);
-        if (!empty($user) && password_verify($password, $user['password'])){
+        if (!empty($user) && password_verify($password, $user['password'])) {
             user_login($user);
         } else {
             $errors[] = MSG_EMAIL_PASSWORD_NOT_MATCH;
