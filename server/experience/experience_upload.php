@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . 'functions.php';
+require_once __DIR__ . '/../common/functions.php';
 
 session_start();
 
@@ -8,6 +8,10 @@ $current_user = '';
 if (isset($_SESSION['current_user'])) {
     $current_user = $_SESSION['current_user'];
 }
+
+$prefectures = find_prefecture_name();
+$addresses = find_city_name();
+
 ?>
 
 <!DOCTYPE html>
@@ -23,18 +27,32 @@ if (isset($_SESSION['current_user'])) {
         <div class="content_left">
             <form action="mypage.php tourist_information.php" method="post">
                 <select name="prefectures">
+                    <option value="都道府県選択">都道府県を選択してください</option>
                     <?php foreach ($prefectures as $prefecture) : ?>
                         <option value="<?= $prefecture['id'] ?>"><?= $prefecture['prefecture_name'] ?></option>
-                        //<option value="都道府県選択">都道府県を選択してください</option>
                     <?php endforeach; ?>
                 </select>
-                <select name="cities"></select>
+                <select name="cities">
+                    <option value="市町村選択">市町村を選択してください</option>
+                    <?php
+                    $sql = 'SELECT * FROM city_name';
+
+                    if ($addresses = $dbh->query($sql)) {
+
+                        foreach ($addresses as $address) {
+                            $addresses .= "<option value='" . $address['id'];
+                            $addresses .= "'>" . $address['city_name'] . "</option>";
+                        }
+                    }
+                    ?>
+                    <form method="POST" action="'"></form>
+                </select>
             </form>
         </div>
         <div class="content_right">
         </div>
         <div class="submit_button">
-            <input type="submit" name="submit" value="この内容で送信✈︎">
+            <input type="submit" name="submit" value="この内容で投稿✈︎">
         </div>
     </main>
     <footer>
@@ -44,28 +62,3 @@ if (isset($_SESSION['current_user'])) {
 </body>
 
 </html>
-
-
-
-
-<select name="prefectures">
-    <?php foreach ($news_news as $news_new) : ?>
-        <option value="<?= $news_new['id'] ?>"><?= $news_new['name'] ?></option>
-    <?php endforeach; ?>
-</select>
-
-function find_news()
-{
-// データベースに接続
-$dbh = connect_db();
-
-/* タスク照会
----------------------------------------------*/
-// done を抽出条件に指定してデータを取得
-$sql = <<<EOM SELECT * FROM news EOM; // プリペアドステートメントの準備 $stmt=$dbh->prepare($sql);
-
-    $stmt->execute();
-
-    // 結果の取得
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }

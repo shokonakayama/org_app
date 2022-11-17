@@ -108,3 +108,45 @@ function user_login($user){
     header('Location: ../users/index.php');
     exit;
 }
+
+//DBよりプルダウンメニューの選択肢を引っ張ってくる
+//都道府県名選択
+function find_prefecture_name()
+{
+$dbh = connect_db();
+
+$sql = <<<EOM
+SELECT
+    *
+FROM
+    prefectures;
+EOM;
+
+$stmt = $dbh->prepare($sql);
+
+//プリペアドステートメントの準備
+$stmt->execute();
+
+//結果の取得
+return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+//市町村名選択
+function find_city_name()
+{
+$dbh = connect_db();
+
+$sql = <<<EOM
+SELECT
+    *
+FROM
+    addresses;
+EOM;
+
+$stmt = $dbh->prepare($sql);
+
+$stmt->execute();
+
+return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+

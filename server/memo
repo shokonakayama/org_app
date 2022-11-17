@@ -1,0 +1,21 @@
+<select name="prefectures">
+    <?php foreach ($news_news as $news_new) : ?>
+        <option value="<?= $news_new['id'] ?>"><?= $news_new['name'] ?></option>
+    <?php endforeach; ?>
+</select>
+
+function find_news()
+{
+// データベースに接続
+$dbh = connect_db();
+
+/* タスク照会
+---------------------------------------------*/
+// done を抽出条件に指定してデータを取得
+$sql = <<<EOM SELECT * FROM news EOM; // プリペアドステートメントの準備 $stmt=$dbh->prepare($sql);
+
+    $stmt->execute();
+
+    // 結果の取得
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
