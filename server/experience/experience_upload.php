@@ -98,5 +98,4 @@ $addresses = find_facilities($prefecture_id);
     </footer>
     <script src="../js/app.js"></script>
 </body>
-
 </html>
