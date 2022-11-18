@@ -34,6 +34,7 @@ $addresses = find_facilities($prefecture_id);
     <?php include_once __DIR__ . '/../common/_header.php' ?>
     <main id="main_content" class="main_content content_center wrapper">
         <div class="upload_content_title">
+            <h2>　</h2>
             <h2>体験談を投稿する✈︎✈︎</h2>
         </div>
         <div class="upload_content_left">
