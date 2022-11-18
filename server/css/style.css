@@ -134,7 +134,7 @@ input[type="text"]::placeholder {
     font-size: 12px;
 }
 input[type="email"],
-input[type="passoword"] {
+input[type="password"] {
     display: block;
     width: 100%;
     background-color: darkgray;
@@ -206,6 +206,67 @@ input[type="password"] {
     align-items: center;
 }
 .index_content a:hover {
+    opacity: 0.9;
+    background-color: #fff;
+    transition-duration: 0.7s;
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .1);
+    transform: translateY(5px);
+    color: darkgray;
+}
+
+/* experience_upload.php */
+.upload_content_title h2 {
+    background-color: #fefefe91;
+    padding: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 5px;
+    width: 30%;
+    text-align: center;
+    font-size: 20px;
+}
+.upload_content_left {
+    margin: 50px;
+}
+input[name="upload_submit"] {
+    text-align: center;
+    background-color: lightgray;
+    padding: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 30px 40%;
+}
+input[name="upload_submit"]:hover {
+    opacity: 0.9;
+    background-color: #fff;
+    transition-duration: 0.7s;
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .1);
+    transform: translateY(5px);
+    color: darkgray;
+}
+select[name="prefecture_id"],
+select[name="address_id"]{
+    text-align: center;
+    background-color: rgba(211, 211, 211, 0.587);
+    margin: 10px;
+    padding: 10px;
+    font-size: 5px;
+    color: brown;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 30%;
+}
+input[name="prefecture_submit"] {
+    text-align: center;
+    background-color: rgba(211, 211, 211, 0.385);
+    margin: 10px;
+    padding: 5px;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 5px;
+}
+input[name="prefecture_submit"]:hover {
     opacity: 0.9;
     background-color: #fff;
     transition-duration: 0.7s;

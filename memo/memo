@@ -1,0 +1,61 @@
+<div class="content_left">
+    <label for="prefecture_name">都道府県を選択してください</label>
+    <select name="prefecture_name" id="prefecture_name">
+        <option selected disabled>未選択</option>
+        <?php
+        $res = $mysqli->query("SELECT id, prefecture_name FROM addresses");
+        while ($prefectures = $res->fetch_assoc()) { ?>
+            <option value="<?= $prefectures['id'] ?>"><?= $prefectures['prefecture_name'] ?></option>
+        <?php } ?>
+    </select>
+
+    <label for="city_name">市町村を選択してください</label>
+    <select name="city_name" id="city_name">
+    </select>
+
+
+    //Ajaxから呼ばれてDB検索する
+    //経験談投稿プルダウンメニュー
+    $dbh = connect_db();
+
+    //DBから検索する処理
+    $stmt=$mysqli->prepare("SELECT id, city_name FROM addresses WHERE prefecture_id = ?");
+    $stmt->bind_param(str_repeat('s', $prefecture_name));
+    $stmt->execute();
+    $res = $stmt->get_result();
+    $list = array();
+    while( $prefectures = $res->fetch_assoc()){
+    $list[$prefectures['id']] = $prefectures['city_name'];
+    }
+    header('Content-Type: appreciation/json');
+    echo json_encode($list);
+
+    <form action="functions.php" method="post">
+        <select name="sightseeing_facilities_id">
+            <option value="sightseeing_facilities_id">施設名を選択してください</option>
+            <?php foreach ($sightseeing_facilities as $sightseeing_facility) : ?>
+                <option value="<?= $sightseeing_facility['address_id'] ?>"> <?= $sightseeing_facility['facility_name'] ?>
+                </option>
+            <?php endforeach; ?>
+            <form method="POST" action=""></form>
+        </select>
+    </form>
+
+    //施設名選択
+    // function find_facilities($address_id)
+    // {
+    // $dbh = connect_db();
+
+    // $sql = <<<EOM // SELECT // * // FROM // sightseeing_facilities // WHERE // address_id=:address_id; // EOM; // $stmt=$dbh->prepare($sql);
+
+        // if (!empty($address_id)){
+        // $stmt->bindValue('address_id', $address_id, PDO::PARAM_INT);
+        // }
+        // $stmt->execute();
+
+        // return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // }
+
+
+        // $address_id = filter_input(INPUT_GET, 'address_id');
+        // $sightseeing_facilities = find_facilities($address_id);
