@@ -185,3 +185,4 @@ function find_facilities($address_id)
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
