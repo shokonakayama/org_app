@@ -17,6 +17,11 @@ if (isset($_SESSION['current_user'])) {
 <body>
     <?php include_once __DIR__ . '/../common/_header.php' ?>
     <main id="main_content" class="main_content content_center wrapper">
+        <div class="post_finish">
+            <p>　</p>
+            <p>投稿完了！</p>
+            <p>ありがとうございます！</p>
+        </div>
         <div class="index_content">
             <a href="/experience_upload.php" class="experience_upload_page_button">もっと体験談を投稿する✈︎</a>
             <a href="/users/index.php" class="index_page_button">TOPページへ✈︎</a>
