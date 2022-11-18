@@ -12,6 +12,10 @@
         <li class="header_nav_item"><a href="/users/logout.php">ログアウト</a></li>
     </div>
     <div class="header_right_side">
-        <li class="header_nav_item">ログイン中<br><?= $current_user['nickname'] ?>さん</li>
+        <?php if (empty($current_user)): ?>
+            <li class="header_nav_item"><a href="/users/login.php"></a>ログイン</li>
+        <?php else: ?>
+            <li class="header_nev_item">ログイン中<br><?= $current_user['nickname'] ?>さん</li>
+        <?php endif; ?>
     </div>
 </header>

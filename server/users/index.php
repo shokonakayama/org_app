@@ -18,9 +18,9 @@ if (isset($_SESSION['current_user'])) {
     <?php include_once __DIR__ . '/../common/_header.php' ?>
     <main id="main_content" class="main_content content_center wrapper">
         <div class="index_content">
-            <a href="search.php" class="index_content_search_page_button">観光地検索✈︎</a>
-            <a href="map_register.php" class="index_content_register_page_button">旅行歴記録</a>
-            <a href="experience_upload.php" class="index_content_experience_upload.php">体験談投稿</a>
+            <a href="/information/search.php" class="index_content_search_page_button">観光地検索✈︎</a>
+            <a href="/map/map_register.php" class="index_content_register_page_button">旅行歴記録</a>
+            <a href="/experience/experience_upload.php" class="index_content_experience_upload.php">体験談投稿</a>
         </div>
     </main>
     <footer>

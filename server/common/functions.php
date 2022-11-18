@@ -42,7 +42,8 @@ function signup_validate($email, $password, $nickname)
     return $errors;
 }
 
-function insert_user($email, $password, $nickname) {
+function insert_user($email, $password, $nickname)
+{
     try {
         $dbh = connect_db();
 
@@ -69,7 +70,8 @@ function insert_user($email, $password, $nickname) {
 }
 
 // ログイン バリデーション関数
-function login_validate($email, $password) {
+function login_validate($email, $password)
+{
     $errors = [];
 
     if (empty($email)) {
@@ -83,7 +85,8 @@ function login_validate($email, $password) {
     return $errors;
 }
 
-function find_user_by_email($email){
+function find_user_by_email($email)
+{
     $dbh = connect_db();
 
     $sql = <<<EOM
@@ -102,51 +105,83 @@ function find_user_by_email($email){
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-function user_login($user){
+function user_login($user)
+{
     $_SESSION['current_user']['id'] = $user['id'];
-    $_SESSION['current_user']['nickname'] =$user['nickname'];
+    $_SESSION['current_user']['nickname'] = $user['nickname'];
     header('Location: ../users/index.php');
     exit;
 }
 
 //DBよりプルダウンメニューの選択肢を引っ張ってくる
 //都道府県名選択
-function find_prefecture_name()
+function find_prefectures()
 {
-$dbh = connect_db();
+    $dbh = connect_db();
 
-$sql = <<<EOM
-SELECT
-    *
-FROM
-    prefectures;
-EOM;
+    $sql = <<<EOM
+    SELECT
+        *
+    FROM
+        prefectures;
+    EOM;
 
-$stmt = $dbh->prepare($sql);
+    $stmt = $dbh->prepare($sql);
 
-//プリペアドステートメントの準備
-$stmt->execute();
-
-//結果の取得
-return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //プリペアドステートメントの準備
+    $stmt->execute();
+    //結果の取得
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 //市町村名選択
-function find_city_name()
+function find_addresses($prefecture_id)
 {
-$dbh = connect_db();
+    $dbh = connect_db();
 
-$sql = <<<EOM
-SELECT
-    *
-FROM
-    addresses;
-EOM;
+    $sql = <<<EOM
+    SELECT
+        *
+    FROM
+        addresses;
+    EOM;
 
-$stmt = $dbh->prepare($sql);
+    if (!empty($prefecture_id)) {
+        $sql .= 'WHERE prefecture_id = :prefecture_id';
+    }
 
-$stmt->execute();
+    $stmt = $dbh->prepare($sql);
 
-return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if (!empty($prefecture_id)) {
+        $stmt->bindValue(':prefecture_id', $prefecture_id, PDO::PARAM_INT);
+    }
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+//施設名選択
+function find_facilities($address_id)
+{
+    $dbh = connect_db();
+
+    $sql = <<<EOM
+    SELECT
+        *
+    FROM
+        sightseeing_facilities;
+    EOM;
+
+    if (!empty($address_id)) {
+        $sql .= 'WHERE address_id = :address_id';
+    }
+
+    $stmt = $dbh->prepare(($sql));
+
+    if (!empty($address_id)) {
+        $stmt->bindValue(':address_id', $address_id, PDO::PARAM_INT);
+    }
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
