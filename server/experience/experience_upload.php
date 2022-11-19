@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 <body>
     <?php include_once __DIR__ . '/../common/_header.php' ?>
-    <main id="main_content" class="main_content content_center wrapper">
+    <main id="main_content" class="main_content content_center main_upload_content wrapper">
         <div class="upload_content_title">
             <p>　</p>
             <h2>体験談を投稿する✈︎✈︎</h2>
@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         </option>
                     <?php endforeach; ?>
                 </select>
+                <br>
                 <input type="submit" name="prefecture_submit" value="検索">
                 <br>
                 <select name="address_id">
@@ -59,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         </option>
                     <?php endforeach; ?>
                 </select>
+                <br>
                 <input type="submit" name="city_submit" value="検索">
             </form>
             <select name="sightseeing_facility_id">
