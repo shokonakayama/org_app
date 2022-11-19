@@ -281,6 +281,21 @@ input[name="city_submit"]:hover {
     transform: translateY(5px);
     color: darkgray;
 }
+input[class="upload_submit a"] {
+    text-align: center;
+    padding: 5px;
+    width: 50%;
+    background-color: #ffffff;
+    color: #ecaa63;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 10px;
+}
+input[class="upload_submit a"]:hover {
+    opacity: 0.9;
+    background-color: orange;
+    color: #ffffff;
+}
 
 /* done.php */
 .post_finish p{

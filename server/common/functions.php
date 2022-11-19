@@ -143,7 +143,7 @@ function find_addresses($prefecture_id)
     SELECT
         *
     FROM
-        addresses;
+        addresses
     EOM;
 
     if (!empty($prefecture_id)) {
@@ -169,7 +169,7 @@ function find_facilities($address_id)
     SELECT
         *
     FROM
-        sightseeing_facilities;
+        sightseeing_facilities
     EOM;
 
     if (!empty($address_id)) {
