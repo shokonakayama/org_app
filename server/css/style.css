@@ -216,7 +216,7 @@ input[type="password"] {
 
 /* experience_upload.php */
 .upload_content_title h2 {
-    background-color: #fefefe91;
+    background-color: #716a6ac8;
     padding: 10px;
     font-weight: bold;
     color: #ffffff;
@@ -228,32 +228,15 @@ input[type="password"] {
 .upload_content_left {
     margin: 50px;
 }
-input[name="upload_submit"] {
-    text-align: center;
-    background-color: lightgray;
-    padding: 10px;
-    font-weight: bold;
-    color: #ffffff;
-    border-radius: 5px;
-    margin: 30px 40%;
-}
-input[name="upload_submit"]:hover {
-    opacity: 0.9;
-    background-color: #fff;
-    transition-duration: 0.7s;
-    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .1);
-    transform: translateY(5px);
-    color: darkgray;
-}
 select[name="prefecture_id"],
 select[name="address_id"],
 select[name="sightseeing_facility_id"],
 textarea[name="add_facility"],
 input[name="travel_date"],
 textarea[name="add_experience"],
-textarea[name="add_experience"]{
+textarea[name="add_experience"] {
     text-align: center;
-    background-color: rgba(211, 211, 211, 0.587);
+    background-color: rgba(211, 211, 211, 0.872);
     margin: 10px;
     padding: 10px;
     font-size: 5px;
@@ -281,31 +264,37 @@ input[name="city_submit"]:hover {
     transform: translateY(5px);
     color: darkgray;
 }
-input[class="upload_submit a"] {
+.upload_content_under a{
+    display: block;
     text-align: center;
-    padding: 5px;
     width: 50%;
     background-color: #ffffff;
     color: #ecaa63;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 20px;
+    width: 30%;
+    padding: 15px;
+    margin: 30px auto;
 }
-input[class="upload_submit a"]:hover {
+.upload_content_under a:hover {
     opacity: 0.9;
     background-color: orange;
     color: #ffffff;
+    transition-duration: 0.7s;
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .1);
+    transform: translateY(5px);
 }
 
 /* done.php */
-.post_finish p{
+.post_finish p {
     text-align: center;
     font-size: 35px;
     font-weight: bold;
     color: navy;
 }
 .index_content.experience_upload_page_button,
-.index_content.index_page_button{
+.index_content.index_page_button {
     text-align: center;
     margin: 20px;
 }

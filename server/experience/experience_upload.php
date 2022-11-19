@@ -85,9 +85,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         </div>
         <div class="upload_content_right">
         </div>
-        <input class="upload_submit" method="POST" action="">
-        <a href="/experience/done.php">この内容で送信✈︎</a>
-        </input>
+        <div class="upload_content_under">
+            <a href="/experience/done.php" class="upload_submit">この内容で送信✈︎</a>
+            <p>　</p>
+        </div>
     </main>
     <footer>
         <?php include_once __DIR__ . '/../common/_footer.html' ?>
