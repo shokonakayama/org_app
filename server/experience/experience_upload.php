@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 <select name="address_id">
                     <option value="city_select">市町村を選択してください</option>
                     <?php foreach ($addresses as $address) : ?>
-                        <option value="<?= $address['prefecture_id'] ?>" <?php if ($address_id == $address['id']) echo 'selected'; ?>>
+                        <option value="<?= $address['id'] ?>" <?php if ($address_id == $address['id']) echo 'selected'; ?>>
                             <?= $address['city_name'] ?>
                         </option>
                     <?php endforeach; ?>
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             <select name="sightseeing_facility_id">
                 <option value="facility_select">施設を選択してください</option>
                 <?php foreach ($sightseeing_facilities as $sightseeing_facility) : ?>
-                    <option value="<?= $sightseeing_facility['address_id'] ?>">
+                    <option value="<?= $sightseeing_facility['id'] ?>">
                         <?= $sightseeing_facility['facility_name'] ?>
                     </option>
                 <?php endforeach; ?>
