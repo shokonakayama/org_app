@@ -225,8 +225,8 @@ input[type="password"] {
     text-align: center;
     font-size: 20px;
 }
-.upload_content_left {
-    margin: 50px;
+.main_upload_content {
+    text-align: center;
 }
 select[name="prefecture_id"],
 select[name="address_id"],
