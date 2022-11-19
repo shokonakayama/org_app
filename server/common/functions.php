@@ -147,7 +147,7 @@ function find_addresses($prefecture_id)
     EOM;
 
     if (!empty($prefecture_id)) {
-        $sql .= 'WHERE prefecture_id = :prefecture_id';
+        $sql .= ' WHERE prefecture_id = :prefecture_id';
     }
 
     $stmt = $dbh->prepare($sql);
@@ -173,7 +173,7 @@ function find_facilities($address_id)
     EOM;
 
     if (!empty($address_id)) {
-        $sql .= 'WHERE address_id = :address_id';
+        $sql .= ' WHERE address_id = :address_id';
     }
 
     $stmt = $dbh->prepare(($sql));

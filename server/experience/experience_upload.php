@@ -50,9 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     <?php endforeach; ?>
                 </select>
                 <input type="submit" name="prefecture_submit" value="検索">
-            </form>
-            <!-- 市町村選択 -->
-            <form action="" method="get">
+                <br>
                 <select name="address_id">
                     <option value="city_select">市町村を選択してください</option>
                     <?php foreach ($addresses as $address) : ?>
@@ -63,18 +61,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 </select>
                 <input type="submit" name="city_submit" value="検索">
             </form>
-            <!-- 施設選択 -->
-            <form action="" method="get">
-                <select name="sightseeing_facility_id">
-                    <option value="facility_select">施設を選択してください</option>
-                    <?php foreach ($sightseeing_facilities as $sightseeing_facility) : ?>
-                        <option value="<?= $sightseeing_facility['address_id'] ?>">
-                            <?= $sightseeing_facility['facility_name'] ?>
-                        </option>
-                    <?php endforeach; ?>
-                    <form method="POST" action=""></form>
-                </select>
-            </form>
+            <select name="sightseeing_facility_id">
+                <option value="facility_select">施設を選択してください</option>
+                <?php foreach ($sightseeing_facilities as $sightseeing_facility) : ?>
+                    <option value="<?= $sightseeing_facility['address_id'] ?>">
+                        <?= $sightseeing_facility['facility_name'] ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
             <!-- 施設名追加入力 -->
             <form method="POST" action="">
                 <textarea name="add_facility" cols="30" rows="10" placeholder="その他の施設名を入力してください（システム更新の際に追加します）"></textarea>
