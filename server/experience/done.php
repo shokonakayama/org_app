@@ -23,7 +23,7 @@ if (isset($_SESSION['current_user'])) {
             <p>ありがとうございます！</p>
         </div>
         <div class="index_content">
-            <a href="/experience_upload.php" class="experience_upload_page_button">もっと体験談を投稿する✈︎</a>
+            <a href="/experience/experience_upload.php" class="experience_upload_page_button">もっと体験談を投稿する✈︎</a>
             <a href="/users/index.php" class="index_page_button">TOPページへ✈︎</a>
         </div>
     </main>

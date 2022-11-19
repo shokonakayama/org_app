@@ -143,11 +143,11 @@ function find_addresses($prefecture_id)
     SELECT
         *
     FROM
-        addresses;
+        addresses
     EOM;
 
     if (!empty($prefecture_id)) {
-        $sql .= 'WHERE prefecture_id = :prefecture_id';
+        $sql .= ' WHERE prefecture_id = :prefecture_id';
     }
 
     $stmt = $dbh->prepare($sql);
@@ -169,11 +169,11 @@ function find_facilities($address_id)
     SELECT
         *
     FROM
-        sightseeing_facilities;
+        sightseeing_facilities
     EOM;
 
     if (!empty($address_id)) {
-        $sql .= 'WHERE address_id = :address_id';
+        $sql .= ' WHERE address_id = :address_id';
     }
 
     $stmt = $dbh->prepare(($sql));
