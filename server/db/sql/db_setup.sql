@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS map_registration (
         ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
-CREATE TABLE IF NOT EXISTS sightseeng_facilities (
+CREATE TABLE IF NOT EXISTS sightseeing_facilities (
     id INT PRIMARY KEY AUTO_INCREMENT,
     address_id INT NOT NULL,
     facility_name VARCHAR(50) NOT NULL,

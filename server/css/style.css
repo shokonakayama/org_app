@@ -246,7 +246,12 @@ input[name="upload_submit"]:hover {
     color: darkgray;
 }
 select[name="prefecture_id"],
-select[name="address_id"]{
+select[name="address_id"],
+select[name="sightseeing_facility_id"],
+textarea[name="add_facility"],
+input[name="travel_date"],
+textarea[name="add_experience"],
+textarea[name="add_experience"]{
     text-align: center;
     background-color: rgba(211, 211, 211, 0.587);
     margin: 10px;
@@ -257,7 +262,8 @@ select[name="address_id"]{
     font-weight: bold;
     width: 30%;
 }
-input[name="prefecture_submit"] {
+input[name="prefecture_submit"],
+input[name="city_submit"] {
     text-align: center;
     background-color: rgba(211, 211, 211, 0.385);
     margin: 10px;
@@ -266,7 +272,8 @@ input[name="prefecture_submit"] {
     border-radius: 5px;
     font-size: 5px;
 }
-input[name="prefecture_submit"]:hover {
+input[name="prefecture_submit"]:hover,
+input[name="city_submit"]:hover {
     opacity: 0.9;
     background-color: #fff;
     transition-duration: 0.7s;
