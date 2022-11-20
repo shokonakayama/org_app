@@ -231,10 +231,21 @@ input[type="password"] {
 select[name="prefecture_id"],
 select[name="address_id"],
 select[name="sightseeing_facility_id"],
-textarea[name="add_facility"],
 input[name="travel_date"],
 textarea[name="add_experience"],
 textarea[name="add_experience"] {
+    text-align: center;
+    background-color: rgba(211, 211, 211, 0.872);
+    margin: 10px;
+    padding: 10px;
+    font-size: 5px;
+    color: brown;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 30%;
+}
+textarea[name="add_facility"] {
+    height: 10em;
     text-align: center;
     background-color: rgba(211, 211, 211, 0.872);
     margin: 10px;
@@ -264,7 +275,7 @@ input[name="city_submit"]:hover {
     transform: translateY(5px);
     color: darkgray;
 }
-.upload_content_under a{
+.upload_content_under a {
     display: block;
     text-align: center;
     width: 50%;
